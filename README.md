@@ -12,15 +12,11 @@
 
 To install the ETCMC Node on your LXC, follow these steps:
 
-1. **Download the Installation Script**
+**Download and Run the Installation Script**
    ```sh
-   wget https://github.com/zeropynes/ETCMCScripts/raw/refs/heads/main/etcmc_script_install.sh
+   wget -O - https://github.com/zeropynes/ETCMCScripts/raw/refs/heads/main/etcmc_script_install.sh | sh
    ```
 
-2. **Run the Installation Script**
-   ```sh
-   sudo sh etcmc_script_install.sh
-   ```
 
 This script will:
 - Update your Linux environment
@@ -30,7 +26,7 @@ This script will:
 
 ### Access the Web UI
 
-Once the installation is complete, the ETCMC Node will start automatically. You can access the Web UI at:
+Once the installation is complete, the ETCMC Node will automatically reboot and start. You can then access the Web UI at:
 ```
 http://<your_server_ip>:5000
 ```
