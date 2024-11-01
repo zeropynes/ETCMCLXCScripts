@@ -38,3 +38,8 @@ http://<your_server_ip>:5000
 - `update.sh` - Stop, update, and restart the ETCMC Node
 - `poweroff.sh` - Stop the node and power off the container
 
+### Donations
+
+If you would like to donate to a contributor, send ETC/ETCPOW to our wallet:
+
+0xA24BC49b794b3bEc609aD72cD7017FFB6e784E2C
