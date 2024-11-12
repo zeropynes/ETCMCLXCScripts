@@ -54,17 +54,11 @@ chmod +x /root/etcmc/poweroff.sh
 
 cat << EOF > /root/etcmc/update.sh
 #!/bin/sh
-# Stopping etcmc node
-/root/etcmc/stop.sh
-
-# Updating etcmc node
-/usr/bin/python3 /root/etcmc/Linux.py update
-
+python3 Linux.py stop
+python3 Linux.py update
 echo 'ETCMC Updated. Starting ETCMC Node now...'
 sleep 5
-
-# Starting etcmc node
-/root/etcmc/start.sh
+./start.sh
 EOF
 chmod +x /root/etcmc/update.sh
 
