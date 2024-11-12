@@ -18,20 +18,54 @@ cd etcmc/
 pip install -r requirements.txt 
 chmod +x Linux.py ETCMC_GETH.py updater.py geth
 clear
+
 echo 'Creating ETCMC Linux Scripts...'
 sleep 5
-touch start.sh 
-chmod +x start.sh 
-{ echo '#!/bin/sh' ; echo 'screen -dmS etcmc' ; echo 'screen -S etcmc -X stuff "/usr/bin/python3 /root/etcmc/Linux.py start --port 5000\n" 1>/dev/null 2>&1' ; echo 'screen -S etcmc -X stuff "exit\n" 1>/dev/null 2>&1' ; } | tee -a /root/etcmc/start.sh
-touch stop.sh 
-chmod +x stop.sh 
-{ echo '#!/bin/sh' ; echo 'python3 Linux.py stop' ; } | tee -a /root/etcmc/stop.sh
-touch poweroff.sh 
-chmod +x poweroff.sh 
-{ echo '#!/bin/sh' ; echo '/usr/bin/python3 /root/etcmc/Linux.py stop' ; echo 'poweroff' ; }  | tee -a /root/etcmc/poweroff.sh 
-touch update.sh 
-chmod +x update.sh 
-{ echo '#!/bin/sh' ; echo 'python3 Linux.py stop' ; echo 'python3 Linux.py update' ; echo 'ETCMC Updated. Starting ETCMC Node now...' ; echo './start.sh' ; } | tee -a /root/etcmc/update.sh
+
+cat << EOF > ~/etcmc/start.sh
+#!/bin/sh
+#creating etcmc screen session as detached
+screen -dmS etcmc
+
+#starting etcmc node on port 5000 and exit screen session immediately when stopped
+screen -S etcmc -X stuff "/usr/bin/python3 /root/etcmc/Linux.py start --port 5000\n" 1>/dev/null 2>&1
+screen -S etcmc -X quit 1>/dev/null 2>&1
+EOF
+chmod +x start.sh
+
+cat << EOF > ~/etcmc/stop.sh
+#!/bin/sh
+#stopping etcmc node
+python3 Linux.py stop
+EOF
+chmod +x stop.sh
+
+cat << EOF > ~/etcmc/poweroff.sh
+#!/bin/sh
+#stopping etcmc node
+~/etcmc/stop.sh
+
+#powering down machine
+poweroff
+EOF
+chmod +x poweroff.sh
+
+cat << EOF > ~/etcmc/update.sh
+#!/bin/sh
+#stopping etcmc node
+~/etcmc/stop.sh
+
+#updating etcmc node
+python3 Linux.py update
+
+echo 'ETCMC Updated. Starting ETCMC Node now...' 
+sleep 5
+
+#starting etcmc node
+~/etcmc/start.sh
+EOF
+chmod +x update.sh
+
 clear
 echo 'Creating ETCMC Service Script...'
 sleep 5
