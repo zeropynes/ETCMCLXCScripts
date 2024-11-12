@@ -31,7 +31,7 @@ cat << EOF > /root/etcmc/start.sh
 
 # Starting etcmc node on port 5000 and exit screen session immediately when stopped
 /usr/bin/screen -S etcmc -X stuff "/usr/bin/python3 /root/etcmc/Linux.py start --port 5000\n" 1>/dev/null 2>&1
-/usr/bin/screen -S etcmc -X quit 1>/dev/null 2>&1
+/usr/bin/screen -S etcmc -X stuff "exit\n" 1>/dev/null 2>&1
 EOF
 chmod +x /root/etcmc/start.sh
 
