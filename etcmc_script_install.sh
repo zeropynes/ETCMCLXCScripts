@@ -89,6 +89,9 @@ EOF
 systemctl daemon-reload
 systemctl enable etcmc.service
 clear
+echo 'Checking for update..'
+sleep 5
+python3 Linux.py update
 
 echo 'Installation complete... Rebooting ETCMC Node in 20 seconds...'
 echo 'Once the reboot is complete, the ETCMC Node will start automatically. Please wait until the reboot is finished, then access the Node Web UI at:'
