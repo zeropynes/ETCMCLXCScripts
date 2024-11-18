@@ -94,7 +94,8 @@ sleep 5
 python3 Linux.py update
 
 echo 'Installation complete... Rebooting ETCMC Node in 20 seconds...'
-echo 'Once the reboot is complete, the ETCMC Node will start automatically. Please wait until the reboot is finished, then access the Node Web UI at:'
+echo 'Once the reboot is complete, the ETCMC Node will start automatically. '
+echo 'Please wait until the reboot is finished, then access the Node Web UI at:'
 my_ip=$(ip route get 8.8.8.8 | awk -F"src " 'NR==1{split($2,a," ");print a[1]}')
 echo "http://$my_ip:5000"
 sleep 20
