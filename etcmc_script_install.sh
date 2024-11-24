@@ -18,6 +18,7 @@ unzip /root/ETCMC_Linux.zip -d /root/etcmc
 chmod -R 755 /root/etcmc/
 cd /root/etcmc
 pip install -r requirements.txt
+pip3 install flask --break-system-packages --ignore-installed
 chmod +x Linux.py ETCMC_GETH.py updater.py geth
 clear
 
