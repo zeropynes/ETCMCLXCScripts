@@ -63,6 +63,20 @@ sleep 5
 EOF
 chmod +x /root/etcmc/update.sh
 
+cat << EOF > /root/etcmc/config_update.sh
+#!/bin/sh
+# Stopping etcmc node
+/usr/bin/python3 /root/etcmc/Linux.py stop
+
+mv config.toml config.toml.old
+wget -O - https://github.com/zeropynes/ETCMCScripts/raw/refs/heads/main/config.toml > config.toml
+
+echo 'ETCMC Config Updated. Starting ETCMC Node now...'
+sleep 5
+./start.sh
+EOF
+chmod +x /root/etcmc/config_update.sh
+
 clear
 echo 'Creating ETCMC Service Script...'
 sleep 5
