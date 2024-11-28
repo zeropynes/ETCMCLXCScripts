@@ -71,9 +71,7 @@ cat << EOF > /root/etcmc/config_update.sh
 mv config.toml config.toml.old
 wget -O - https://github.com/zeropynes/ETCMCScripts/raw/refs/heads/main/config.toml > config.toml
 
-echo 'ETCMC Config Updated. Starting ETCMC Node now...'
-sleep 5
-./start.sh
+echo 'ETCMC Config Updated. You can start your ETCMC Node now...'
 EOF
 chmod +x /root/etcmc/config_update.sh
 
