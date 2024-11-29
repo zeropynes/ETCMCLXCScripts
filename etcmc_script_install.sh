@@ -15,7 +15,7 @@ echo 'Installing ETCMC Linux...'
 sleep 5
 apt install unzip python3 python3-pip screen -y 
 unzip /root/ETCMC_Linux.zip -d /root/etcmc
-chmod -R 755 /root/etcmc/
+chmod -R 775 /root/etcmc/
 cd /root/etcmc
 pip install -r requirements.txt
 pip3 install flask --break-system-packages --ignore-installed
