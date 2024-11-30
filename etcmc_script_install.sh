@@ -18,8 +18,6 @@ unzip /root/ETCMC_Linux.zip -d /root/etcmc
 chmod -R 775 /root/etcmc/
 cd /root/etcmc
 pip install -r requirements.txt
-pip install plyer websockets aiohttp --break-system-packages
-pip3 install flask --break-system-packages --ignore-installed
 chmod +x Linux.py ETCMC_GETH.py updater.py geth
 clear
 
@@ -106,6 +104,8 @@ clear
 echo 'Checking for update..'
 sleep 5
 python3 Linux.py update
+pip install plyer websockets aiohttp --break-system-packages
+pip3 install flask --break-system-packages --ignore-installed
 
 echo 'Installation complete... Rebooting ETCMC Node in 20 seconds...'
 echo 'Once the reboot is complete, the ETCMC Node will start automatically. '
