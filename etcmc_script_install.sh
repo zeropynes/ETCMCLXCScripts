@@ -56,6 +56,8 @@ cat << EOF > /root/etcmc/update.sh
 #!/bin/sh
 python3 Linux.py stop
 python3 Linux.py update
+pip install plyer websockets aiohttp --break-system-packages
+pip install flask --break-system-packages --ignore-installed
 echo 'ETCMC Updated. Starting ETCMC Node now...'
 sleep 5
 ./start.sh
@@ -105,7 +107,7 @@ echo 'Checking for update..'
 sleep 5
 python3 Linux.py update
 pip install plyer websockets aiohttp --break-system-packages
-pip3 install flask --break-system-packages --ignore-installed
+pip install flask --break-system-packages --ignore-installed
 
 echo 'Installation complete... Rebooting ETCMC Node in 20 seconds...'
 echo 'Once the reboot is complete, the ETCMC Node will start automatically. '
