@@ -100,8 +100,27 @@ RemainAfterExit=true
 WantedBy=multi-user.target
 EOF
 
+cat << EOF > /etc/systemd/system/etcmcstop.service
+[Unit]
+Description=ETCMC Node prior shutdown
+Requires=network-online.target
+After=network-online.target
+
+
+[Service]
+User=root
+Group=root
+Type=oneshot
+RemainAfterExit=true
+ExecStop=/usr/bin/python3 /root/etcmc/Linux.py stop
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
 systemctl daemon-reload
 systemctl enable etcmc.service
+systemctl enable etcmcstop.service
 clear
 echo 'Checking for update..'
 sleep 5
