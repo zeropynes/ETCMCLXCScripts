@@ -111,6 +111,7 @@ After=network-online.target
 User=root
 Group=root
 Type=oneshot
+TimeoutStopSec=infinity
 RemainAfterExit=true
 ExecStop=/usr/bin/python3 /root/etcmc/Linux.py stop
 
