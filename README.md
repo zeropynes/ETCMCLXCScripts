@@ -14,7 +14,7 @@ To install the ETCMC Node on your LXC, follow these steps:
 
 **Download and Run the Installation Script**
    ```sh
-   wget -O - https://github.com/zeropynes/ETCMCScripts/raw/refs/heads/main/etcmc_lxc_script_install.sh | sh
+   wget -O - https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/etcmc_lxc_script_install.sh | sh
    ```
 
 
