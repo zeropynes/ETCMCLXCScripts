@@ -69,8 +69,18 @@ cat << EOF > /root/etcmc/config_update.sh
 # Stopping etcmc node
 /usr/bin/python3 /root/etcmc/Linux.py stop
 
-mv config.toml config.toml.old
-wget -O - https://github.com/zeropynes/ETCMCScripts/raw/refs/heads/main/config.toml > config.toml
+if [ -e config.toml.old ]
+then
+    if [ -e config.toml ]
+    then
+        rm config.toml.old
+        mv config.toml config.toml.old
+    fi
+else
+    mv config.toml config.toml.old
+fi
+
+wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/config.toml -O /root/etcmc/config.toml
 
 echo 'ETCMC Config Updated. You can start your ETCMC Node now...'
 EOF
