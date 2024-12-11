@@ -44,6 +44,14 @@ fi
 
 cat << EOF > /root/etcmc/stop.sh
 #!/bin/sh
+
+if [ -e /root/etcmc/shutdown.log ]
+then
+    date >> /root/etcmc/shutdown.log
+else
+    date > /root/etcmc/shutdown.log
+fi
+
 # Stopping etcmc node
 /usr/bin/python3 /root/etcmc/Linux.py stop
 EOF
