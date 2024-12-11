@@ -86,6 +86,16 @@ echo 'ETCMC Config Updated. You can start your ETCMC Node now...'
 EOF
 chmod +x /root/etcmc/config_update.sh
 
+cat << EOF > /root/etcmc/scripts_update.sh 
+#!/bin/sh
+
+clear
+wget -O - https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/update_scripts.sh | sh
+
+echo 'ETCMC Scripts Updated. You can start your ETCMC Node now...'
+EOF
+chmod +x /root/etcmc/scripts_update.sh 
+
 clear
 echo 'Creating ETCMC Service Script...'
 sleep 5
