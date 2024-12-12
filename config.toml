@@ -29,7 +29,7 @@ WSPort = 8546
 
 [Node.P2P]
 # Peer-to-peer configurations
-MaxPeers = 10
+MaxPeers = 15
 NoDiscovery = false
 
 # Add your bootstrap nodes here
