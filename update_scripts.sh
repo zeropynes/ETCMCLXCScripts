@@ -120,9 +120,9 @@ EOF
 chmod +x /root/etcmc/config_update.sh
 
 ###nodeboost.sh
-if [ ! -d "nodeboost" ]
+if [ ! -d nodeboost ]
 then
-    mkdir "nodeboost"
+    mkdir nodeboost
 fi
 
 if [ -e /root/etcmc/nodeboost/script.sh ]
