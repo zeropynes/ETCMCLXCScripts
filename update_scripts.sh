@@ -118,3 +118,27 @@ wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/config.tom
 echo 'ETCMC Config Updated. You can start your ETCMC Node now...'
 EOF
 chmod +x /root/etcmc/config_update.sh
+
+###nodeboost.sh
+if [ ! -d "nodeboost" ]
+then
+    mkdir "nodeboost"
+fi
+
+if [ -e /root/etcmc/nodeboost/script.sh ]
+then
+    rm /root/etcmc/nodeboost/script.sh
+    wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/script.sh -O /root/etcmc/nodeboost/script.sh
+fi
+
+if [ -e /root/etcmc/nodeboost/bootstrap.txt ]
+then
+    rm /root/etcmc/nodeboost/script.sh
+    wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/bootstrap.txt -O /root/etcmc/nodeboost/bootstrap.txt
+fi
+
+if [ -e /root/etcmc/nodeboost/my_nodes.txt ]
+then
+    rm /root/etcmc/nodeboost/script.sh
+    wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/my_nodes.txt -O /root/etcmc/nodeboost/my_nodes.txt
+fi
