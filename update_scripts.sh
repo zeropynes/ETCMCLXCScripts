@@ -143,3 +143,4 @@ fi
 wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/script.sh -O /root/etcmc/nodeboost/nodeboost.sh
 wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/bootstrap.txt -O /root/etcmc/nodeboost/bootstrap.txt
 wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/my_nodes.txt -O /root/etcmc/nodeboost/my_nodes.txt
+chmod +x /root/etcmc/nodeboost/nodeboost.sh
