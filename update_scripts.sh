@@ -128,17 +128,18 @@ fi
 if [ -e /root/etcmc/nodeboost/script.sh ]
 then
     rm /root/etcmc/nodeboost/script.sh
-    wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/script.sh -O /root/etcmc/nodeboost/script.sh
 fi
 
 if [ -e /root/etcmc/nodeboost/bootstrap.txt ]
 then
     rm /root/etcmc/nodeboost/script.sh
-    wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/bootstrap.txt -O /root/etcmc/nodeboost/bootstrap.txt
 fi
 
 if [ -e /root/etcmc/nodeboost/my_nodes.txt ]
 then
     rm /root/etcmc/nodeboost/script.sh
-    wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/my_nodes.txt -O /root/etcmc/nodeboost/my_nodes.txt
 fi
+
+wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/script.sh -O /root/etcmc/nodeboost/nodeboost.sh
+wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/bootstrap.txt -O /root/etcmc/nodeboost/bootstrap.txt
+wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/my_nodes.txt -O /root/etcmc/nodeboost/my_nodes.txt
