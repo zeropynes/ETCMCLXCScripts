@@ -13,7 +13,7 @@ clear
 
 echo 'Installing ETCMC Linux...'
 sleep 5
-apt install unzip python3 python3-pip screen -y 
+apt install unzip python3 python3-pip screen curl -y 
 unzip /root/ETCMC_Linux.zip -d /root/etcmc
 chmod -R 775 /root/etcmc/
 cd /root/etcmc
