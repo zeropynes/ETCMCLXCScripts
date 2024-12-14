@@ -125,19 +125,19 @@ then
     mkdir nodeboost
 fi
 
-if [ -e /root/etcmc/nodeboost/script.sh ]
+if [ -e /root/etcmc/nodeboost/nodeboost.sh ]
 then
-    rm /root/etcmc/nodeboost/script.sh
+    rm /root/etcmc/nodeboost/nodeboost.sh
 fi
 
 if [ -e /root/etcmc/nodeboost/bootstrap.txt ]
 then
-    rm /root/etcmc/nodeboost/script.sh
+    rm /root/etcmc/nodeboost/bootstrap.txt
 fi
 
 if [ -e /root/etcmc/nodeboost/my_nodes.txt ]
 then
-    rm /root/etcmc/nodeboost/script.sh
+    rm /root/etcmc/nodeboost/my_nodes.txt
 fi
 
 wget https://github.com/zeropynes/ETCMCLXCScripts/raw/refs/heads/main/script.sh -O /root/etcmc/nodeboost/nodeboost.sh
