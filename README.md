@@ -1,6 +1,6 @@
-# ETCMC Scripts
+# ETCMC LXC Scripts
 
-**ETCMC Scripts** provides a quick and easy setup for running an ETCMC Node on an LXC (Linux Container) environment. This repository includes a one-click shell script, `etcmc_script_install.sh`, that automatically installs and configures the ETCMC Node, setting up all necessary dependencies, system services, and scripts.
+**ETCMC LXC Scripts** provides a quick and easy setup for running an ETCMC Node on an LXC (Linux Container) environment. This repository includes a one-click shell script, `etcmc_script_install.sh`, that automatically installs and configures the ETCMC Node, setting up all necessary dependencies, system services, and scripts.
 
 ### Features
 
@@ -40,6 +40,6 @@ http://<your_server_ip>:5000
 
 ### Donations
 
-If you would like to donate to a contributor, send ETC/ETCPOW to our wallet:
+If you would like to donate to support ongoing development, send ETC/ETCPOW to our wallet:
 
 0xA24BC49b794b3bEc609aD72cD7017FFB6e784E2C
