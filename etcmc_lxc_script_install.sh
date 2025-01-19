@@ -80,6 +80,7 @@ cat << EOF > /root/etcmc/update.sh
 #!/bin/sh
 python3 Linux.py stop
 python3 Linux.py update
+pip install --upgrade pip
 pip3 install -r requirements.txt --break-system-packages --ignore-installed
 pip3 install plyer websockets aiohttp --ignore-installed
 pip3 install flask --ignore-installed
