@@ -120,6 +120,28 @@ echo 'ETCMC Config Updated. You can start your ETCMC Node now...'
 EOF
 chmod +x /root/etcmc/config_update.sh
 
+###nodeboost.sh
+
+if [ -e /root/etcmc/nodeboost/nodeboost.sh ]
+then
+    rm /root/etcmc/nodeboost/nodeboost.sh
+fi
+
+if [ -e /root/etcmc/nodeboost/bootstrap.txt ]
+then
+    rm /root/etcmc/nodeboost/bootstrap.txt
+fi
+
+if [ -e /root/etcmc/nodeboost/my_nodes.txt ]
+then
+    rm /root/etcmc/nodeboost/my_nodes.txt
+fi
+
+if [ -d nodeboost ]
+then
+    rm -rf nodeboost
+fi
+
 clear
 echo "Update Complete!"
 echo "\n"
