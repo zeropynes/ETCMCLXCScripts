@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # List all ETCMC Node LXC ID
-containers=$(pct list | grep ETCMC | awk 'NR>0 {print $1}')
+containers=$(pct list | awk 'NR>0 {print $1}')
 
 # Update auto_claim.json File
 AUTOCLAIM_JSON='{"auto_claim": "no"}'
