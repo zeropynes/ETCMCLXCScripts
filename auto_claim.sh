@@ -1,5 +1,17 @@
 #!/bin/bash
-clear
+
+# List all ETCMC Node LXC ID
+containers=$(pct list | awk 'NR>0 {print $1}')
+
+# Update auto_claim.json File
+AUTOCLAIM_JSON='{"auto_claim": "no"}'
+
+# Start Update
+echo "Starting to update ETCMC LXC Containers"
+for container in $containers; do
+    echo "Updating ETCMC LXC: $container"
+    pct exec $container -- bash -c "cd etcmc ; echo '$AUTOCLAIM_JSON' > auto_claim.json" || echo "Error updating auto_claim.json file"
+done
 
 echo -e "\033[1;36m" # Cyan text color
 cat << "EOF"
