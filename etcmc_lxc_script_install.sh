@@ -180,6 +180,9 @@ echo "http://$my_ip:5000"
 sleep 20
 
 clear
+echo 'Your Weather Forecast for today...'
+curl wttr.in
+echo "\n"
 echo 'Please Reboot Manually...'
 echo "\n"
 #/sbin/reboot
